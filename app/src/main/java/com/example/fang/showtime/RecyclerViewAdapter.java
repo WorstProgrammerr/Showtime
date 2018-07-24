@@ -44,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
         holder.tv_title.setText(mData.get(position).getTitle());
         holder.tv_year.setText(mData.get(position).getYear());
@@ -60,7 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 Intent intent = new Intent(mContext,MovieInformationActivity.class);
                 Toast.makeText(mContext,"Test Click"+String.valueOf(holder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-
+                callback.onMovieClick(mData.get(position).getPoster());
                 mContext.startActivity(intent);
 
             }

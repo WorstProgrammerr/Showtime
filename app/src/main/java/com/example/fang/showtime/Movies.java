@@ -2,6 +2,7 @@ package com.example.fang.showtime;
 
 public class Movies {
 
+    private String id;
     private String Title;
     private String Year;
     private String Prating;
@@ -12,7 +13,9 @@ public class Movies {
     public Movies() {
     }
 
-    public Movies(String title, String year, String prating, String genre, String rating, int poster) {
+    public Movies(String i,String title, String year, String prating, String genre, String rating, int poster)
+    {
+        id = i;
         Title = title;
         Year = year;
         Prating = prating;
@@ -22,6 +25,10 @@ public class Movies {
     }
 
     //Getter
+
+    public String getId(){
+        return id;
+    }
 
     public String getTitle() {
         return Title;
@@ -48,6 +55,10 @@ public class Movies {
     }
 
     //Setter
+
+    public void setId(String newId){
+        id = newId;
+    }
 
     public void setTitle(String title) {
         Title = title;
