@@ -60,7 +60,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 Intent intent = new Intent(mContext,MovieInformationActivity.class);
                 Toast.makeText(mContext,"Test Click"+String.valueOf(holder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-                callback.onMovieClick(mData.get(position).getPoster());
+                //error in my code :(
+                callback.onMovieClick(mData.get(position).getId());
+                //do I put intent.putExtra("movie_id",id) here?
                 mContext.startActivity(intent);
             }
         });
