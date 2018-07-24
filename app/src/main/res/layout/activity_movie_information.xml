@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mainscreens.MovieInformationActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        app:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/appbarid2">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/img_movie2"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/posterbase"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/year_movie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="2018"
+                    app:layout_constraintStart_toEndOf="@+id/img_movie2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/prating_movie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:text="P16"
+                    app:layout_constraintStart_toEndOf="@+id/year_movie2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/duration_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:text="2hr 45min"
+                    app:layout_constraintStart_toEndOf="@+id/prating_movie2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title_movie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Movie Title"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toEndOf="@+id/img_movie2"
+                    app:layout_constraintTop_toBottomOf="@+id/prating_movie2" />
+
+                <TextView
+                    android:id="@+id/genre_movie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Action | Adventure"
+                    app:layout_constraintStart_toEndOf="@+id/img_movie2"
+                    app:layout_constraintTop_toBottomOf="@+id/title_movie2" />
+
+                <Button
+                    android:id="@+id/btn_trailer"
+                    android:layout_width="74dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/transparent_bkground_border_button"
+                    android:text="trailer"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toEndOf="@+id/img_movie2"
+                    app:layout_constraintTop_toBottomOf="@+id/genre_movie2" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            android:layout_gravity="bottom"
+            android:id="@+id/tablelayout_id2"
+            app:tabSelectedTextColor="#fff"
+            app:tabTextColor="#E0E0E0"
+            app:tabIndicatorColor="@color/colorAccent"
+            android:background="@color/colorPrimary">
+
+        </android.support.design.widget.TabLayout>
+
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager_id2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </android.support.v4.view.ViewPager>
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
