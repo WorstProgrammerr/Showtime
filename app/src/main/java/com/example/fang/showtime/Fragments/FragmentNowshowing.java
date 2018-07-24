@@ -1,5 +1,6 @@
 package com.example.fang.showtime.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,7 +32,12 @@ public class FragmentNowshowing extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.nowshowing_fragment,container,false);
         myrecyclerview = (RecyclerView) v.findViewById(R.id.recyclerView1);
-        RecyclerViewAdapter recyclerAdapter = new RecyclerViewAdapter(getContext(),firstMovie);
+        RecyclerViewAdapter recyclerAdapter = new RecyclerViewAdapter(getContext(),firstMovie, new RecyclerViewAdapter.Callback() {
+            @Override
+            public void onMovieClick(String id) {
+
+            }
+        });
         myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         myrecyclerview.setAdapter(recyclerAdapter);
         return v;
