@@ -62,7 +62,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Toast.makeText(mContext,"Test Click"+String.valueOf(holder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
                 callback.onMovieClick(mData.get(position).getPoster());
                 mContext.startActivity(intent);
-
             }
         });
 

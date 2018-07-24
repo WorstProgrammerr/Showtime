@@ -42,14 +42,68 @@ public class FragmentNowshowing extends Fragment {
         super.onCreate(savedInstanceState);
 
         firstMovie = new ArrayList<>();
-        firstMovie.add(new Movies("Ant Man and the Wasp","2018","PG13","Action,Comedy","Good 7.8/10",R.drawable.antman_and_the_wasp));
-        firstMovie.add(new Movies("Deadpool 2","2018","R21","Action,Comedy","Excellent 8.1/10",R.drawable.deadpool2));
-        firstMovie.add(new Movies("Incredibles 2","2018","PG","Animation,Family","Excellent 8.2/10",R.drawable.incredibles2));
-        firstMovie.add(new Movies("Avengers:Infinity War","2018","PG13","Action,Fantasy","Excellent 8.7/10",R.drawable.infinitywar));
-        firstMovie.add(new Movies("Jurrasic World","2018","PG13","Action,Adventure","Good 6.6/10",R.drawable.jurrasicworld));
-        firstMovie.add(new Movies("Rampage","2018","PG13","Action,Science Fiction","Good 6.3/10",R.drawable.rampage));
-        firstMovie.add(new Movies("Ready Player One","2018","PG13","Action,Fantasy","Good 7.7/10",R.drawable.readyplayer1));
-        firstMovie.add(new Movies("Thor Ragnorok","2018","PG13","ActionComedy","Good 7.9/10",R.drawable.thor_ragnorok));
+        firstMovie.add(new Movies("M1",
+                "Ant Man and the Wasp",
+                "2018",
+                "PG13",
+                "Action,Comedy",
+                "Good 7.8/10",
+                R.drawable.antman_and_the_wasp));
+
+        firstMovie.add(new Movies("M2",
+                "Deadpool 2",
+                "2018",
+                "R21",
+                "Action,Comedy",
+                "Excellent 8.1/10",
+                R.drawable.deadpool2));
+
+        firstMovie.add(new Movies("M3",
+                "Incredibles 2",
+                "2018",
+                "PG",
+                "Animation,Family",
+                "Excellent 8.2/10",
+                R.drawable.incredibles2));
+
+        firstMovie.add(new Movies("M4",
+                "Avengers:Infinity War",
+                "2018",
+                "PG13",
+                "Action,Fantasy",
+                "Excellent 8.7/10",
+                R.drawable.infinitywar));
+
+        firstMovie.add(new Movies("M5",
+                "Jurrasic World",
+                "2018",
+                "PG13",
+                "Action,Adventure",
+                "Good 6.6/10",
+                R.drawable.jurrasicworld));
+        firstMovie.add(new Movies("M6",
+                "Rampage",
+                "2018",
+                "PG13",
+                "Action,Science Fiction",
+                "Good 6.3/10",
+                R.drawable.rampage));
+
+        firstMovie.add(new Movies("M7",
+                "Ready Player One",
+                "2018",
+                "PG13",
+                "Action,Fantasy",
+                "Good 7.7/10",
+                R.drawable.readyplayer1));
+
+        firstMovie.add(new Movies("M8",
+                "Thor Ragnorok",
+                "2018",
+                "PG13",
+                "ActionComedy",
+                "Good 7.9/10",
+                R.drawable.thor_ragnorok));
 
 
     }
