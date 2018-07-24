@@ -20,6 +20,11 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
+    public interface OnMovieClickListener{
+        void onMovieClick(int id);
+    }
+
+    private OnMovieClickListener callback;
     private Context mContext ;
     private List<Movies> mData;
 
@@ -35,27 +40,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View v ;
         v = LayoutInflater.from(mContext).inflate(R.layout.now_showing_list,parent,false);
         final MyViewHolder vHolder = new MyViewHolder(v);
-
-
-
-
-        vHolder.item_nowshowing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(mContext,MovieInformationActivity.class);
-                Toast.makeText(mContext,"Test Click"+String.valueOf(vHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-
-                mContext.startActivity(intent);
-
-            }
-        });
-
         return vHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
         holder.tv_title.setText(mData.get(position).getTitle());
         holder.tv_year.setText(mData.get(position).getYear());
@@ -63,6 +52,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.tv_genre.setText(mData.get(position).getGenre());
         holder.tv_rating.setText(mData.get(position).getRating());
         holder.img.setImageResource(mData.get(position).getPoster());
+
+
+        holder.item_nowshowing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(mContext,MovieInformationActivity.class);
+                Toast.makeText(mContext,"Test Click"+String.valueOf(holder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+
+                mContext.startActivity(intent);
+
+            }
+        });
 
 
 
