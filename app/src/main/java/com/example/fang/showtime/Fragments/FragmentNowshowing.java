@@ -35,6 +35,7 @@ public class FragmentNowshowing extends Fragment {
         RecyclerViewAdapter recyclerAdapter = new RecyclerViewAdapter(getContext(),firstMovie, new RecyclerViewAdapter.Callback() {
             @Override
             public void onMovieClick(String id) {
+                Intent.putExtra("M1", id);
 
             }
         });
