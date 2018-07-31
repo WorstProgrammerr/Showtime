@@ -30,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<Movies> mData;
 
 
-    public RecyclerViewAdapter(Context mContext, List<Movies> mData, Callback callback) {
+    public RecyclerViewAdapter(Context mContext, List<Movies> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -55,16 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.img.setImageResource(mData.get(position).getPoster());
 
 
-        holder.item_nowshowing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(mContext,MovieInformationActivity.class);
-                Toast.makeText(mContext,"Test Click"+String.valueOf(holder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-                callback.onMovieClick(mData.get(position).getId());
-                mContext.startActivity(intent);
-            }
-        });
 
 
 
@@ -99,7 +90,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
     }
-
     public void setCallback(Callback callback){
         this.callback = callback;
     }

@@ -1,5 +1,6 @@
 package com.example.fang.showtime.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,7 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.fang.showtime.Mainscreens.MovieInformationActivity;
 import com.example.fang.showtime.Movies;
 import com.example.fang.showtime.R;
 import com.example.fang.showtime.RecyclerViewAdapter;
@@ -22,6 +25,7 @@ public class FragmentNowshowing extends Fragment {
 
     View v;
     private RecyclerView myrecyclerview;
+    private Context mContext ;
     private List<Movies> firstMovie;
 
     public FragmentNowshowing() {
@@ -35,8 +39,9 @@ public class FragmentNowshowing extends Fragment {
         RecyclerViewAdapter recyclerAdapter = new RecyclerViewAdapter(getContext(),firstMovie, new RecyclerViewAdapter.Callback() {
             @Override
             public void onMovieClick(String id) {
-                Intent.putExtra("M1", id);
-
+                Intent intent = new Intent(mContext,MovieInformationActivity.class);
+                mContext.startActivity(intent);
+                intent.putExtra("M1",id);
             }
         });
         myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -49,7 +54,7 @@ public class FragmentNowshowing extends Fragment {
         super.onCreate(savedInstanceState);
 
         firstMovie = new ArrayList<>();
-        firstMovie.add(new Movies("M1",
+        firstMovie.add(new Movies(
                 "Ant Man and the Wasp",
                 "2018",
                 "PG13",
@@ -57,7 +62,7 @@ public class FragmentNowshowing extends Fragment {
                 "Good 7.8/10",
                 R.drawable.antman_and_the_wasp));
 
-        firstMovie.add(new Movies("M2",
+        firstMovie.add(new Movies(
                 "Deadpool 2",
                 "2018",
                 "R21",
@@ -65,7 +70,7 @@ public class FragmentNowshowing extends Fragment {
                 "Excellent 8.1/10",
                 R.drawable.deadpool2));
 
-        firstMovie.add(new Movies("M3",
+        firstMovie.add(new Movies(
                 "Incredibles 2",
                 "2018",
                 "PG",
@@ -73,7 +78,7 @@ public class FragmentNowshowing extends Fragment {
                 "Excellent 8.2/10",
                 R.drawable.incredibles2));
 
-        firstMovie.add(new Movies("M4",
+        firstMovie.add(new Movies(
                 "Avengers:Infinity War",
                 "2018",
                 "PG13",
@@ -81,14 +86,14 @@ public class FragmentNowshowing extends Fragment {
                 "Excellent 8.7/10",
                 R.drawable.infinitywar));
 
-        firstMovie.add(new Movies("M5",
+        firstMovie.add(new Movies(
                 "Jurrasic World",
                 "2018",
                 "PG13",
                 "Action,Adventure",
                 "Good 6.6/10",
                 R.drawable.jurrasicworld));
-        firstMovie.add(new Movies("M6",
+        firstMovie.add(new Movies(
                 "Rampage",
                 "2018",
                 "PG13",
@@ -96,7 +101,7 @@ public class FragmentNowshowing extends Fragment {
                 "Good 6.3/10",
                 R.drawable.rampage));
 
-        firstMovie.add(new Movies("M7",
+        firstMovie.add(new Movies(
                 "Ready Player One",
                 "2018",
                 "PG13",
@@ -104,7 +109,7 @@ public class FragmentNowshowing extends Fragment {
                 "Good 7.7/10",
                 R.drawable.readyplayer1));
 
-        firstMovie.add(new Movies("M8",
+        firstMovie.add(new Movies(
                 "Thor Ragnorok",
                 "2018",
                 "PG13",

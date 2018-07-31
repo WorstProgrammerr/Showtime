@@ -54,6 +54,7 @@
         android:layout_marginTop="16dp"
         android:gravity="left"
         android:text="prating"
+        android:background="@drawable/border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toEndOf="@+id/year_movie"
